@@ -7,8 +7,6 @@ namespace ProjeInMemory.Controllers
     public class IndexController : Controller
     {
         string strKisiler_Cache_Anahtar = "kisiler_key";
-
-
         private readonly IMemoryCache mcHafiza;
         public IndexController(IMemoryCache _mcHafiza)
         {
