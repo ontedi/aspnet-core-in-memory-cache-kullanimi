@@ -17,12 +17,12 @@ namespace ProjeInMemory.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View("~/Views/Index.cshtml");
         }
-
 
         public IActionResult InMemoryCacheOlustur()
         {
+            string strSonuc = string.Empty;
             List<Kisiler>? liste = null;
             bool blnKontrol = mcHafiza.TryGetValue(strKisiler_Cache_Anahtar, out liste);
             if (!blnKontrol)
@@ -39,6 +39,8 @@ namespace ProjeInMemory.Controllers
                     Priority = CacheItemPriority.Normal
                 };
                 mcHafiza.Set(strKisiler_Cache_Anahtar, liste, mceoAyarlar);
+
+                strSonuc = "Cache içerisinde veri yoktu, cache oluşturuldu";
             }
             else
             {
@@ -46,9 +48,11 @@ namespace ProjeInMemory.Controllers
                 if (objListe_Kisiler != null)
                 {
                     liste = (List<Kisiler>)objListe_Kisiler;
+
+                    strSonuc = "Cache içerisinde veri mevcut, veriler cache üzerinden okunarak alındı";
                 }
             }
-            return View("~/Views/InMemoryCacheOlustur.cshtml", liste);
+            return View("~/Views/InMemoryCacheOlustur.cshtml", strSonuc);
         }
     }
 }
