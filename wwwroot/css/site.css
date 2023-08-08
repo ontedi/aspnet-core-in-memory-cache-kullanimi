@@ -1,5 +1,5 @@
 *{margin:0;padding:0}
-body{font-size:14px;font-family:Arial, sans-serif;}
+body{font-size:14px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;line-height:22px;}
 .kapsul{width:600px;border:1px solid #f3f3f3;padding:5px;margin:20px auto;padding:10px;}
 ul{list-style-type:none;margin-bottom:20px;text-align:center;display:block;}
 ul li{display:inline;margin:3px;}

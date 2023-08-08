@@ -33,6 +33,8 @@ namespace ProjeInMemory.Controllers
                     liste.Add(new Kisiler() { kisi_ID = i, kisi_adi = $"İsim {i}" });
                 }
 
+                liste[0].olusturulma_tarihi = DateTime.Now;
+
                 MemoryCacheEntryOptions mceoAyarlar = new MemoryCacheEntryOptions
                 {
                     AbsoluteExpiration = DateTime.Now.AddMinutes(10),
@@ -48,8 +50,10 @@ namespace ProjeInMemory.Controllers
                 if (objListe_Kisiler != null)
                 {
                     liste = (List<Kisiler>)objListe_Kisiler;
-
-                    strSonuc = "Cache içerisinde veri mevcut, veriler cache üzerinden okunarak alındı";
+                    strSonuc = $"Cache içerisinde veri mevcut, veriler cache üzerinden okunarak alındı.";
+                    strSonuc += $"<br />Bellekten okunan kişi sayısı: {liste.Count}";
+                    strSonuc += $"<br />Bellek oluşturulma tarihi: {liste[0].olusturulma_tarihi}";
+                    strSonuc += $"<br />Şuanki tarih: {DateTime.Now}";
                 }
             }
             return View("~/Views/InMemoryCacheOlustur.cshtml", strSonuc);
