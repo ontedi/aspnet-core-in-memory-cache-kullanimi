@@ -7,3 +7,8 @@ ul.menu li a{color:#ff6a00;text-decoration:none;background-color:#f4f4f4;padding
 
 ul.kisiler{list-style-type:none;}
 ul.kisiler li{display:block;margin:3px;border-bottom:1px solid #d4d4d4;}
+
+
+
+.telif{background-color:#cd2122;line-height:1.5;position:absolute;right:0px;bottom:0px;padding:3px 20px;}
+.telif a{color:#fff;text-decoration:none;}
