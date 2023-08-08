@@ -1,6 +1,9 @@
 *{margin:0;padding:0}
 body{font-size:14px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;line-height:22px;}
 .kapsul{width:600px;border:1px solid #f3f3f3;padding:5px;margin:20px auto;padding:10px;}
-ul{list-style-type:none;margin-bottom:20px;text-align:center;display:block;}
-ul li{display:inline;margin:3px;}
-ul li a{color:#ff6a00;text-decoration:none;background-color:#f4f4f4;padding:5px;}
+ul.menu{list-style-type:none;margin-bottom:20px;text-align:center;display:block;}
+ul.menu li{display:inline;margin:3px;}
+ul.menu li a{color:#ff6a00;text-decoration:none;background-color:#f4f4f4;padding:5px;}
+
+ul.kisiler{list-style-type:none;}
+ul.kisiler li{display:block;margin:3px;border-bottom:1px solid #d4d4d4;}

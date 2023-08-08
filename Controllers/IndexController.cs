@@ -26,7 +26,7 @@ namespace ProjeInMemory.Controllers
             if (!blnKontrol)
             {
                 liste = new List<Kisiler>();
-                for (int i = 0; i < 200; i++)
+                for (int i = 1; i < 200; i++)
                 {
                     liste.Add(new Kisiler() { kisi_ID = i, kisi_adi = $"İsim {i}" });
                 }
@@ -55,6 +55,17 @@ namespace ProjeInMemory.Controllers
                 }
             }
             return View("~/Views/InMemoryCacheOlustur.cshtml", strSonuc);
+        }
+
+        public IActionResult InMemoryCacheListele()
+        {
+            List<Kisiler>? liste = new List<Kisiler>();
+            object? objListe_Kisiler = mcHafiza.Get(strKisiler_Cache_Anahtar);
+            if (objListe_Kisiler != null)
+            {
+                liste = (List<Kisiler>)objListe_Kisiler;
+            }
+            return View("~/Views/InMemoryCacheListele.cshtml", liste);
         }
     }
 }

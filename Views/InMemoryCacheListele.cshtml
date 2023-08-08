@@ -1,0 +1,12 @@
+﻿@model List<Kisiler>;
+@using ProjeInMemory.Classes;
+
+@if (Model != null && Model.Count > 0)
+{
+    <ul class="kisiler">
+    @foreach (var item in Model)
+    {
+        <li>@item.kisi_adi</li>
+    }
+    </ul>
+}
