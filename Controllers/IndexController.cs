@@ -67,5 +67,17 @@ namespace ProjeInMemory.Controllers
             }
             return View("~/Views/InMemoryCacheListele.cshtml", liste);
         }
+
+        public IActionResult InMemoryCacheSil()
+        {
+            string strSonuc = "Cacheleme yapılmadığı için In-memory Cache silinmedi";
+            object? objListe_Kisiler = mcHafiza.Get(strKisiler_Cache_Anahtar);
+            if (objListe_Kisiler != null)
+            {
+                mcHafiza.Remove(strKisiler_Cache_Anahtar);
+                strSonuc = "In-memory Cache silindi";
+            }
+            return View("~/Views/InMemoryCacheSil.cshtml", strSonuc);
+        }
     }
 }
